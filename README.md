@@ -139,44 +139,6 @@ http://localhost:5000/abc123
 - **URL Validation** - Ensures only valid URLs are processed
 - **Error Handling** - Secure error messages without exposing sensitive data
 
-## 📊 Usage Examples
-
-### Using cURL
-
-**Shorten a URL:**
-```bash
-curl -X POST http://localhost:5000/api/url/shorten \
-  -H "Content-Type: application/json" \
-  -d '{"originalUrl": "https://github.com/javin1106"}'
-```
-
-**Access shortened URL:**
-```bash
-curl -L http://localhost:5000/abc123
-```
-
-### Using JavaScript Fetch
-
-```javascript
-// Shorten URL
-const shortenUrl = async (originalUrl) => {
-  const response = await fetch('http://localhost:5000/api/url/shorten', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ originalUrl }),
-  });  
-  const data = await response.json();
-  return data;
-};
-
-// Usage
-shortenUrl('https://www.example.com/long/url')
-  .then(data => console.log('Short URL:', data.shortUrl))
-  .catch(error => console.error('Error:', error));
-```
-
 ## ⚙️ Environment Variables
 
 | Variable       | Description                    | Default               |
